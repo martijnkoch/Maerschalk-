@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background: #F6F5FA;
 }
 .wrapper {
@@ -8,9 +10,13 @@ body {
 }
 
 #sidebar {
+    background: #ffffff;
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
+    -webkit-box-shadow: 3px 0px 12px -2px rgba(0,0,0,0.20);
+    -moz-box-shadow: 3px 0px 12px -2px rgba(0,0,0,0.20);
+    box-shadow: 3px 0px 12px -2px rgba(0,0,0,0.20);
 }
 
 #sidebar.active {
@@ -18,7 +24,7 @@ body {
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -31,12 +37,6 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
-#sidebar {
-    /* don't forget to add all the previously mentioned styles here too */
-    background: #ffffff;
-    color: #fff;
-    transition: all 0.3s;
-}
 
 #sidebar .sidebar-header {
     padding: 20px;
@@ -47,7 +47,7 @@ a, a:hover, a:focus {
     color: #3F1030;
 }
 #sidebar ul.components {
-    padding: 115px 20px;;
+    padding: 115px 55px;;
 }
 
 #sidebar ul p {
@@ -67,7 +67,6 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #6d7fcc;
     background-size: 300px 100px;
     background-size: 10px;
 }
@@ -75,4 +74,53 @@ ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+}
+li {
+    position: relative;
+}
+ul li:nth-child(1):before {
+    content: ' ';
+    position: absolute;
+    top: 12px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background: url("./images/dash.svg") no-repeat;
+}
+
+ul li:nth-child(2):before {
+    content: ' ';
+    position: absolute;
+    top: 17px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background: url("./images/email.svg") no-repeat;
+}
+
+ul li:nth-child(3):before {
+    content: ' ';
+    position: absolute;
+    top: 18px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background: url("./images/Notification.svg") no-repeat;
+}
+
+ul li:nth-child(4):before {
+    content: ' ';
+    position: absolute;
+    top: 16px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background: url("./images/team.svg") no-repeat;
+}
+
+
+/*Search bar top */
+
+.fixed-top {
+    z-index: -1;
 }
