@@ -1,22 +1,33 @@
 <template>
   <div id="app">
-      Peru beste land in zuid amerika
-      <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+             <div class="sidebar-header">
+                <img src="@/assets/images/Maerschalk_logo.svg"/>
+            </div>
+            <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Email</a>
+            </li>
+            <li>
+                <a href="#">Meldingen</a>
+            </li>
+            <li>
+                <a href="#">Team</a>
+            </li>
+        </ul>
+        </nav>
 
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-  </div>
+        <!-- Page Content -->
+        <div id="content">
+            <!-- We'll fill this with dummy content -->
+        </div>
+    </div>       
+</div>
 </template>
 
 <script>
