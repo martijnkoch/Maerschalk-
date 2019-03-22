@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      Peru
+      Peru beste land in zuid amerika
   </div>
 </template>
 
