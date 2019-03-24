@@ -17,6 +17,7 @@ body {
     -webkit-box-shadow: 3px 0px 12px -2px rgba(0,0,0,0.20);
     -moz-box-shadow: 3px 0px 12px -2px rgba(0,0,0,0.20);
     box-shadow: 3px 0px 12px -2px rgba(0,0,0,0.20);
+    z-index: 1;
 }
 
 #sidebar.active {
@@ -46,10 +47,9 @@ a, a:hover, a:focus {
 #sidebar .sidebar-header h3 {
     color: #3F1030;
 }
-#sidebar ul.components {
-    padding: 115px 55px;;
+#sidebar ul {
+    padding-top: 50px;
 }
-
 #sidebar ul p {
     color: #fff;
     padding: 10px;
@@ -78,11 +78,19 @@ ul ul a {
 li {
     position: relative;
 }
+#sidebar ul li {
+    padding-left: 40px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+#sidebar ul li:nth-child(4) {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
 ul li:nth-child(1):before {
     content: ' ';
     position: absolute;
     top: 12px;
-    left: -20px;
+    left: 22px;
     width: 50px;
     height: 50px;
     background: url("./images/dash.svg") no-repeat;
@@ -92,7 +100,7 @@ ul li:nth-child(2):before {
     content: ' ';
     position: absolute;
     top: 17px;
-    left: -20px;
+    left: 25px;
     width: 50px;
     height: 50px;
     background: url("./images/email.svg") no-repeat;
@@ -102,7 +110,7 @@ ul li:nth-child(3):before {
     content: ' ';
     position: absolute;
     top: 18px;
-    left: -20px;
+    left: 24px;
     width: 50px;
     height: 50px;
     background: url("./images/Notification.svg") no-repeat;
@@ -112,7 +120,7 @@ ul li:nth-child(4):before {
     content: ' ';
     position: absolute;
     top: 16px;
-    left: -20px;
+    left: 24px;
     width: 50px;
     height: 50px;
     background: url("./images/team.svg") no-repeat;
@@ -124,3 +132,46 @@ ul li:nth-child(4):before {
 .fixed-top {
     z-index: -1;
 }
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+.header-container{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+.header-nav{
+    height: 250px;
+    background-color: #ffffff;
+}
+.nav-tabs{
+    border: none;
+}
+.header-search{
+    font-size: 22px;
+    font-weight: 900;
+    color: #ff8b88;
+    width: 100%;
+    padding: 12px 24px;
+    background-color: #F5F6FA !important;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: #575756;
+    background-image: url("./images/search.svg");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 10% center;
+    border-radius: 50px;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border: none !important;
+ }
+.header-search::placeholder {
+    color:#A97EA0;
+    letter-spacing: 1.5px;
+    padding: 120px;
+}
+
