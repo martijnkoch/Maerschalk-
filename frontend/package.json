@@ -12,6 +12,7 @@
     "bootstrap-vue": "^2.0.0-rc.15",
     "node-sass": "^4.11.0",
     "vue": "^2.6.10",
+    "vue-resource": "^1.5.1",
     "vue-router": "^3.0.2"
   },
   "devDependencies": {

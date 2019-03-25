@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/'
+import VueResource from 'vue-resource'
 
 //Bootstrap files 
 import BootstrapVue from 'bootstrap-vue'
@@ -11,6 +12,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 require('./assets/main.css')
 
 Vue.use(BootstrapVue)
+Vue.use(require('vue-resource'));
 Vue.config.productionTip = false
 
 new Vue({

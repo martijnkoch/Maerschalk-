@@ -27,6 +27,20 @@ export default {
   name: 'app',
   components: {
     'Headercomponent': Headercomponent,
-  }
+  },
+  methods: {
+      fetchCustomers(){
+        this.$http.get('http://localhost:8888/api/customers')
+          .then(function(response){
+            console.log(response.body);
+          });
+      }
+    },
+    created: function(){
+      if(this.$route.query.alert){
+        this.alert = this.$route.query.alert;
+      }
+      this.fetchCustomers();
+    },
 }
 </script>
