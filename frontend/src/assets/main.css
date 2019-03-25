@@ -175,3 +175,15 @@ ul li:nth-child(4):before {
     padding: 120px;
 }
 
+.mt-6 {
+  margin-top: 5rem !important;
+}
+
+.mt-7 {
+  margin-top: 7rem !important;
+}
+
+.mt-8 {
+  margin-top: 10rem !important;
+}
+
