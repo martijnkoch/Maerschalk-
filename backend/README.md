@@ -7,7 +7,7 @@ This is a RESTful api built with the SlimPHP framework and uses MySQL for storag
 
 ### Installation
 
-Create database or import from _sql/slimapp.sql
+Create database or import from _sql/emergency_call.sql
 
 Edit db/config params
 
@@ -18,9 +18,9 @@ $ composer update
 ```
 ### API Endpints
 ```sh
-$ GET /api/customers
-$ GET /api/customer/{id}
-$ POST /api/customer/add
-$ PUT /api/customer/update/{id}
-$ DELETE /api/customer/delete/{id}
+$ GET /api/emergency_calls
+$ GET /api/emergency_call/{id}
+$ POST /api/emergency_call/add
+$ PUT /api/emergency_call/update/{id}
+$ DELETE /api/emergency_call/delete/{id}
 ```
