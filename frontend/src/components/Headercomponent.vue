@@ -5,11 +5,9 @@
             <b-form-input
             class="header-search"
             id="inputFormatter"
-            v-model="text1"
             type="text"
             placeholder="Zoeken"
             aria-describedby="inputFormatterHelp"
-            :formatter="format"
             />
         </b-col>
         </b-nav>
