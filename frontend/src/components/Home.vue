@@ -24,11 +24,9 @@
           <b-col v-for="call in calls" :key="call">
             <router-link v-bind:to="'/call/'+call.id">        
               <b-card
-                title="Card Title"
                 tag="article"
-                style="max-width: 25rem;"
               >
-                <b-card-text>{{call.company_name}}</b-card-text>
+                <h4 class="card-title">{{call.company_name}}</h4>
                 <b-card-text>{{call.phone}}</b-card-text>
                 <b-button href="#" class="float-right" variant="primary">New</b-button>
               </b-card>
