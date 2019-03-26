@@ -1,42 +1,23 @@
 <template>
-<div class="container-fluid header-container">
+  <div class="container-fluid header-container">
     <Headercomponent></Headercomponent>
-
-<b-container class="bv-example-row mt-7">
-   
-    <h1>Noodoproepen</h1>
-   
-    <b-row>
-        <b-col>
-            <b-card
-            title="Royal Canin"
-            tag="article"
-            style="max-width: 25rem;"
-            >
-
-            <b-card-text>Team development</b-card-text>
-            <b-card-text>06 12 34 56 78</b-card-text>
-
-            <b-button href="#" class="float-right" variant="primary">New</b-button>
+    <b-container class="bv-example-row mt-7">
+      <h1>Noodoproepen</h1>
+      <b-row>
+        <b-col v-for="call in calls" :key="call">
+          <router-link v-bind:to="'/call/'+call.id">        
+            <b-card tag="article">
+              <h4 class="card-title">{{call.company_name}}</h4>
+              <b-card-text>{{call.phone}}</b-card-text>
+              <router-link v-bind:to="'/call/'+call.id">
+                <b-button class="float-right" variant="primary">New</b-button>
+              </router-link>
             </b-card>
+          </router-link>
         </b-col>
-
-          <b-col v-for="call in calls" :key="call">
-            <router-link v-bind:to="'/call/'+call.id">        
-              <b-card
-                tag="article"
-              >
-                <h4 class="card-title">{{call.company_name}}</h4>
-                <b-card-text>{{call.phone}}</b-card-text>
-                <b-button href="#" class="float-right" variant="primary">New</b-button>
-              </b-card>
-            </router-link>
-          </b-col>
-    </b-row>
-</b-container>
-   
-
-</div>
+      </b-row>
+    </b-container>  
+  </div>
 </template>
 
 <script>
