@@ -13,7 +13,7 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
     return $response;
 });
 
-// Customer Routes
-require '../src/routes/emergency_calls.php';
+// Maerschalk Routes
+include '../src/routes/maerschalk.php';
 
 $app->run();

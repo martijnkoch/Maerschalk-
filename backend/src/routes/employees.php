@@ -17,8 +17,8 @@ $app->add(function ($req, $res, $next) {
 });
 
 // Get All Emergency Calls
-$app->get('/api/emergency_calls', function(Request $request, Response $response){
-    $sql = "SELECT * FROM emergency_calls";
+$app->get('/api/employees', function(Request $request, Response $response){
+    $sql = "SELECT * FROM employees";
 
     try{
         // Get DB Object
@@ -36,10 +36,10 @@ $app->get('/api/emergency_calls', function(Request $request, Response $response)
 });
 
 // Get Single Emergency Call
-$app->get('/api/emergency_call/{id}', function(Request $request, Response $response){
+$app->get('/api/employee/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
 
-    $sql = "SELECT * FROM emergency_calls WHERE id = $id";
+    $sql = "SELECT * FROM employees WHERE id = $id";
 
     try{
         // Get DB Object
@@ -57,12 +57,12 @@ $app->get('/api/emergency_call/{id}', function(Request $request, Response $respo
 });
 
 // Add Emergency Call
-$app->post('/api/emergency_call/add', function(Request $request, Response $response){
+$app->post('/api/employee/add', function(Request $request, Response $response){
     $company_name = $request->getParam('company_name');
     $phone = $request->getParam('phone');
 
 
-    $sql = "INSERT INTO emergency_calls (company_name,phone) VALUES
+    $sql = "INSERT INTO employees (company_name,phone) VALUES
     (:company_name,:phone)";
 
     try{
@@ -86,13 +86,13 @@ $app->post('/api/emergency_call/add', function(Request $request, Response $respo
 });
 
 // Update Emergency Call
-$app->put('/api/emergency_call/update/{id}', function(Request $request, Response $response){
+$app->put('/api/employee/update/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
     $company_name = $request->getParam('company_name');
     $phone = $request->getParam('phone');
     $body = $request->getParam('body');
 
-    $sql = "UPDATE emergency_calls SET
+    $sql = "UPDATE employees SET
 				company_name	= :company_name,
                 phone		    = :phone,
                 body            = :body
@@ -112,7 +112,7 @@ $app->put('/api/emergency_call/update/{id}', function(Request $request, Response
 
         $stmt->execute();
 
-        echo '{"notice": {"text": "Emergency Call Updated"}';
+        echo '{"notice": {"text": "Employee Updated"}';
 
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
@@ -120,10 +120,10 @@ $app->put('/api/emergency_call/update/{id}', function(Request $request, Response
 });
 
 // Delete Emergency Call
-$app->delete('/api/emergency_call/delete/{id}', function(Request $request, Response $response){
+$app->delete('/api/employee/delete/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
 
-    $sql = "DELETE FROM emergency_calls WHERE id = $id";
+    $sql = "DELETE FROM employees WHERE id = $id";
 
     try{
         // Get DB Object
@@ -134,7 +134,7 @@ $app->delete('/api/emergency_call/delete/{id}', function(Request $request, Respo
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $db = null;
-        echo '{"notice": {"text": "Emergency Call Deleted"}';
+        echo '{"notice": {"text": "Employee Deleted"}';
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
     }

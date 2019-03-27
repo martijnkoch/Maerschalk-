@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empolyees`
+-- Table structure for table `employees`
 --
 
-CREATE TABLE `empolyees` (
+CREATE TABLE `employees` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -35,10 +35,10 @@ CREATE TABLE `empolyees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `empolyees`
+-- Dumping data for table `employees`
 --
 
-INSERT INTO `empolyees` (`id`, `first_name`, `last_name`, `job`, `image`) VALUES
+INSERT INTO `employees` (`id`, `first_name`, `last_name`, `job`, `image`) VALUES
 (1, 'John', 'Doe', 'Back-end Developer', 'john.jpg'),
 (2, 'Esther', 'De vries', 'Sales manager', 'esther.jpg'),
 (3, 'Pim', 'Willems', 'Front-end Developer', 'pim.jpg');
@@ -48,9 +48,9 @@ INSERT INTO `empolyees` (`id`, `first_name`, `last_name`, `job`, `image`) VALUES
 --
 
 --
--- Indexes for table `empolyees`
+-- Indexes for table `employees`
 --
-ALTER TABLE `empolyees`
+ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,9 +58,9 @@ ALTER TABLE `empolyees`
 --
 
 --
--- AUTO_INCREMENT for table `empolyees`
+-- AUTO_INCREMENT for table `employees`
 --
-ALTER TABLE `empolyees`
+ALTER TABLE `employees`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
