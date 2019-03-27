@@ -9,7 +9,9 @@
         <ul class="list-unstyled components">
             <div class="boder">
                 <li class="active">
-                    <a href="/" data-toggle="collapse" aria-expanded="false">Dashboard</a>
+                    <router-link to="/">
+                        <a data-toggle="collapse" aria-expanded="false">Dashboard</a>
+                    </router-link>
                 </li>
             </div>
             <li>
@@ -19,7 +21,9 @@
                 <a href="#">Meldingen</a>
             </li>
             <li>
-                <a href="#">Team</a>
+                <router-link to="/team">
+                    <a href="#">Team</a>
+                </router-link>
             </li>
         </ul>
     </nav>

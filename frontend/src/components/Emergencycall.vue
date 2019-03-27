@@ -1,17 +1,17 @@
 <template>
-    <div class="container-fluid header-container">
-        <Headercomponent></Headercomponent>
-            <b-container class="bv-example-row mt-7">
-                <router-link to="/"><b-button variant="link">Go Back</b-button></router-link>
-                <h2>{{call.company_name}}</h2>
-                <h2>{{call.phone}}</h2>
-                <div class="form-group shadow-textarea">
-                  <textarea class="form-control call-textarea" rows="5" v-model="call.body"></textarea>
-                </div>
-                <b-button variant="primary" v-on:click="updateCall(call.id)">Primary</b-button>
-                <b-button variant="danger" v-on:click="deleteCall(call.id)">Delete</b-button>
-            </b-container>
-    </div>
+  <div class="container-fluid header-container">
+      <Headercomponent></Headercomponent>
+          <b-container class="bv-example-row mt-7">
+              <router-link to="/"><b-button variant="link">Go Back</b-button></router-link>
+              <h2>{{call.company_name}}</h2>
+              <h2>{{call.phone}}</h2>
+              <div class="form-group shadow-textarea">
+                <textarea class="form-control call-textarea" rows="5" v-model="call.body"></textarea>
+              </div>
+              <b-button variant="primary" v-on:click="updateCall(call.id)">Primary</b-button>
+              <b-button variant="danger" v-on:click="deleteCall(call.id)">Delete</b-button>
+          </b-container>
+  </div>
 </template>
 
 <script>
