@@ -12,7 +12,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 require('./assets/main.css')
 
 Vue.use(BootstrapVue)
-Vue.use(require('vue-resource'));
+Vue.use(VueResource)
 Vue.config.productionTip = false
 
 new Vue({

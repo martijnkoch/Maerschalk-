@@ -6,7 +6,7 @@
       <b-row>
         <b-col v-for="call in calls" :key="call">
           <router-link v-bind:to="'/call/'+call.id">        
-            <b-card tag="article">
+            <b-card tag="article" border-variant="light" class="shadow-sm p-3 mb-5 bg-white rounded">
               <h4 class="card-title">{{call.company_name}}</h4>
               <b-card-text>{{call.phone}}</b-card-text>
               <router-link v-bind:to="'/call/'+call.id">
@@ -17,7 +17,7 @@
         </b-col>
       </b-row>
       <h2 class="mb-4 mt-4">Emails</h2>
-        <table class="table mt-2">
+        <table class="table table-light shadow-sm p-3 bg-white rounded mt-2">
             <thead>
                 <tr>
                 <th scope="col">Ontvanger</th>
