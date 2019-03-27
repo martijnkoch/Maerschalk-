@@ -17,7 +17,8 @@
         </b-col>
       </b-row>
       <h2 class="mb-4 mt-4">Emails</h2>
-        <table class="table table-light shadow-sm p-3 bg-white rounded mt-2">
+       <!-- Sidebar 
+        <table class="table table-light shadow-sm p-3 rounded border-bottom mt-2">
             <thead>
                 <tr>
                 <th scope="col">Ontvanger</th>
@@ -46,7 +47,7 @@
                 <td>@twitter</td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </b-container>  
   </div>
 </template>
