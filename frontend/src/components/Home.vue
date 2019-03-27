@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid header-container">
     <Headercomponent></Headercomponent>
-    <b-container class="bv-example-row mt-7">
-      <h1>Noodoproepen</h1>
+    <b-container class="bv-example-row mt-6">
+      <h2 class="mb-4">Noodoproepen</h2>
       <b-row>
         <b-col v-for="call in calls" :key="call">
           <router-link v-bind:to="'/call/'+call.id">        
@@ -16,37 +16,38 @@
           </router-link>
         </b-col>
       </b-row>
+      <h2 class="mb-4 mt-4">Emails</h2>
+        <table class="table mt-2">
+            <thead>
+                <tr>
+                <th scope="col">Ontvanger</th>
+                <th scope="col">Onderwerp</th>
+                <th scope="col">Datum</th>
+                <th scope="col">Aantal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
     </b-container>  
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
   </div>
 </template>
 
