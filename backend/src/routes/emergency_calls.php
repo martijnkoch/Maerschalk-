@@ -90,10 +90,12 @@ $app->put('/api/emergency_call/update/{id}', function(Request $request, Response
     $id = $request->getAttribute('id');
     $company_name = $request->getParam('company_name');
     $phone = $request->getParam('phone');
+    $body = $request->getParam('body');
 
     $sql = "UPDATE emergency_calls SET
 				company_name	= :company_name,
-                phone		    = :phone
+                phone		    = :phone,
+                body            = :body
 			WHERE id = $id";
 
     try{
@@ -104,8 +106,9 @@ $app->put('/api/emergency_call/update/{id}', function(Request $request, Response
 
         $stmt = $db->prepare($sql);
 
-        $stmt->bindParam(':company_name', $company_name);
-        $stmt->bindParam(':phone',      $phone);
+        $stmt->bindParam(':company_name',   $company_name);
+        $stmt->bindParam(':phone',          $phone);
+        $stmt->bindParam(':body',           $body);
 
         $stmt->execute();
 
