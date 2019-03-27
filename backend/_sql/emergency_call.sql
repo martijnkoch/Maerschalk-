@@ -29,16 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `emergency_calls` (
   `id` int(11) NOT NULL,
   `company_name` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL
+  `phone` varchar(255) NOT NULL,
+   `body` text NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `emergency_calls`
 --
 
-INSERT INTO `emergency_calls` (`id`, `company_name`, `phone`) VALUES
-(1, 'Royal Canin', '333-333-3333'),
-(2, 'Simac', '333-333-3333');
+INSERT INTO `emergency_calls` (`id`, `company_name`, `phone`, `body`) VALUES
+(1, 'Royal Canin', '333-333-3333', 'text'),
+(2, 'Simac', '333-333-3333', 'text');
 
 --
 -- Indexes for dumped tables
