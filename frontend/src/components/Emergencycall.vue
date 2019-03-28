@@ -31,7 +31,7 @@ export default {
     methods: {
       //Fetch een call aan de hand van de ID 
       fetchCall(id){
-        this.$http.get('http://localhost:8888/api/emergency_call/'+id)
+        this.$http.get('https://www.herrkoch.nl/api/emergency_call/'+id)
           .then(function(response){
             console.log(response.body);
             this.call = response.body;
@@ -39,7 +39,7 @@ export default {
       },
       //Delete de call uit de database
       deleteCall(id){
-        this.$http.delete('http://localhost:8888/api/emergency_call/delete/'+id)
+        this.$http.delete('https://www.herrkoch.nl/api/emergency_call/delete/'+id)
           .then(function(response){
             this.$router.push({
                 path: '/'
@@ -52,7 +52,7 @@ export default {
             phone: this.call.phone,
             body: this.call.body,
         }
-        this.$http.put('http://localhost:8888/api/emergency_call/update/'+this.$route.params.id, updateCall)
+        this.$http.put('https://www.herrkoch.nl/api/emergency_call/update/'+this.$route.params.id, updateCall)
             .then(function(response){
                 this.$router.push({path: '/'});
             });

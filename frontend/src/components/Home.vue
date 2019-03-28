@@ -68,7 +68,7 @@ export default {
     methods: {
       // Fetch alle calls uit de API 
       fetchCalls(){
-        this.$http.get('http://localhost:8888/api/emergency_calls')
+        this.$http.get('https://www.herrkoch.nl/api/emergency_calls')
           .then(function(response){
             console.log(response.body);
             this.calls = response.body;
