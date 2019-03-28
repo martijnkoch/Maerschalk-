@@ -9,21 +9,17 @@
         <ul class="list-unstyled components">
             <div class="boder">
                 <li class="active">
-                    <router-link to="/">
-                        <a data-toggle="collapse" aria-expanded="false">Dashboard</a>
-                    </router-link>
+                    <router-link to="/">Dashboard</router-link>
                 </li>
             </div>
             <li>
-                <a href="#">Email</a>
+                <router-link to="/">Email</router-link>
             </li>
             <li>
-                <a href="#">Meldingen</a>
+                <router-link to="/">Meldingen</router-link>
             </li>
             <li>
-                <router-link to="/team">
-                    <a href="#">Team</a>
-                </router-link>
+                <router-link to="/team">Team</router-link>
             </li>
         </ul>
     </nav>

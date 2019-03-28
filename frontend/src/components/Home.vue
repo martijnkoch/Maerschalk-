@@ -3,9 +3,6 @@
     <Headercomponent></Headercomponent>
     <b-container class="bv-example-row mt-6">
       <h2 class="mb-4">Noodoproepen</h2>
-
-      <b-alert show fade dismissible variant="success">Success Alert</b-alert>
-
       <b-row>
         <b-col v-for="call in calls" :key="call">
           <router-link v-bind:to="'/call/'+call.id">        
