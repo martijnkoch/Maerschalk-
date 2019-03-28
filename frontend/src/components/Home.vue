@@ -4,7 +4,7 @@
     <b-container class="bv-example-row mt-6">
       <h2 class="mb-4">Noodoproepen</h2>
       <b-row>
-        <b-col v-for="call in calls" :key="call">
+        <b-col lg="3" md="6" sm="12" v-for="call in calls" :key="call">
           <router-link v-bind:to="'/call/'+call.id">        
             <b-card tag="article" border-variant="light" class="shadow-sm p-3 mb-5 bg-white rounded">
               <h4 class="card-title">{{call.company_name}}</h4>
