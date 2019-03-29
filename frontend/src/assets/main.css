@@ -142,7 +142,7 @@ ul li:nth-child(4):before {
     padding-left: 0 !important;
 }
 .header-nav{
-    height: 250px;
+    height: 100px;
     background-color: #ffffff;
 }
 .nav-tabs{
@@ -162,7 +162,7 @@ ul li:nth-child(4):before {
     background-image: url("./images/search.svg");
     background-repeat: no-repeat;
     background-size: 18px 18px;
-    background-position: 10% center;
+    background-position: 2% center;
     border-radius: 50px;
     transition: all 250ms ease-in-out;
     backface-visibility: hidden;
@@ -172,7 +172,9 @@ ul li:nth-child(4):before {
 .header-search::placeholder {
     color:#A97EA0;
     letter-spacing: 1.5px;
-    padding: 120px;
+}
+#inputFormatter{
+    padding-left: 45px;
 }
 
 .mt-6 {
