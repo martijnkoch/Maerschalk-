@@ -126,6 +126,9 @@ ul li:nth-child(4):before {
     background: url("./images/team.svg") no-repeat;
 }
 
+.container {
+    max-width: 1300px;
+}
 
 /*Search bar top */
 
@@ -149,11 +152,13 @@ ul li:nth-child(4):before {
     border: none;
 }
 .header-search{
+    margin-top: 10px;
+    margin-left: 50px;
     font-size: 22px;
     font-weight: 900;
     color: #ff8b88;
     width: 100%;
-    padding: 12px 24px;
+    padding: 2px 24px;
     background-color: #F5F6FA !important;
     transition: transform 250ms ease-in-out;
     font-size: 14px;
@@ -177,6 +182,8 @@ ul li:nth-child(4):before {
     padding-left: 45px;
 }
 
+/*Margin values */
+
 .mt-6 {
   margin-top: 5rem !important;
 }
@@ -188,6 +195,11 @@ ul li:nth-child(4):before {
 .mt-8 {
   margin-top: 10rem !important;
 }
+.ml-6 {
+  margin-left: 5rem !important;
+}
+
+/*Card css */
 .call-textarea{
     max-width: 50%;
     resize: none;

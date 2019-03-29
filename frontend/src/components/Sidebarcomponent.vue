@@ -13,9 +13,6 @@
                 </li>
             </div>
             <li>
-                <router-link to="/">Email</router-link>
-            </li>
-            <li>
                 <router-link to="/">Meldingen</router-link>
             </li>
             <li>
