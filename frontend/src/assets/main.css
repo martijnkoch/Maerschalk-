@@ -205,3 +205,31 @@ ul li:nth-child(4):before {
     resize: none;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)!important;
 }
+
+.card-title{
+    color: #3F1030;
+    font-weight: 500;
+}
+
+.card-text{
+    color: #A97EA0;
+}
+
+.noodoproep-title{
+    color: #4D4F5C;
+    font-weight: 400;
+}
+
+.homepage-cardbutton {
+    color: #ffffff;
+    border-radius: 40px;
+}
+
+.homepage-cardbutton:hover {
+    color: #ffffff;
+    background-color: #dea90a;
+}
+
+.hvr-grow-shadow:hover{
+    transform: scale(1.05);
+}
