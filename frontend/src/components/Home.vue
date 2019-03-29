@@ -4,11 +4,11 @@
     <b-container class="bv-example-row mt-5">
       <h2 class="mb-4 noodoproep-title">Noodoproepen</h2>
       <b-row>
-        <b-col lg="4" md="6" sm="12" v-for="call in calls" :key="call">
+        <b-col lg="3" md="6" sm="12" v-for="call in calls" :key="call">
           <router-link v-bind:to="'/call/'+call.id">        
             <b-card tag="article" border-variant="light" class="shadow-sm p-3 mb-5 bg-white rounded hvr-grow-shadow">
               <h4 class="card-title">{{call.company_name}}</h4>
-              <b-card-text>{{call.phone}}</b-card-text>
+              <b-card-text>Nummer: {{call.phone}}</b-card-text>
               <router-link v-bind:to="'/call/'+call.id">
                 <b-button class="float-right homepage-cardbutton mb-4" variant="warning">Actief</b-button>
               </router-link>
