@@ -239,6 +239,21 @@ ul li:nth-child(4):before {
     padding: 0.575rem 1rem;
 }
 
-.Bezig {
-    background-color: purple;
+.nieuw{
+    background-color: #FF6565;
+    border-color: #FF6565;
+}
+
+.nieuw:hover{
+    background-color: #d83b3b;
+    border-color: #d83b3b;
+}
+
+.bezig {
+    background-color: #FFC107;
+}
+
+.bezig:hover{
+    background-color: #e6af08;
+    border-color: #e6af08;
 }

@@ -39,12 +39,8 @@ export default {
       fetchCall(id){
         this.$http.get('https://www.herrkoch.nl/api/emergency_call/'+id)
           .then(function(response){
-            console.log(response.body);
             this.call = response.body;
           });
-      },
-      hideModal() {
-        this.$refs['emergency-modal'].hide()
       },
       //Delete de call uit de database
       deleteCall(id){
@@ -55,10 +51,12 @@ export default {
             });
         });
       },
+      //Update de tekst en de status van de call
       updateCall(e){
         let updateCall = {
             company_name: this.call.company_name,
             phone: this.call.phone,
+            status: 'Bezig',
             body: this.call.body,
         }
         this.$http.put('https://www.herrkoch.nl/api/emergency_call/update/'+this.$route.params.id, updateCall)
