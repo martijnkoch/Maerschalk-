@@ -81,9 +81,6 @@ li {
     padding-left: 40px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
-#sidebar ul li:nth-child(3) {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
 
 ul li:nth-child(1):before {
     content: ' ';
@@ -93,36 +90,6 @@ ul li:nth-child(1):before {
     width: 50px;
     height: 50px;
     background: url("./images/dash.svg") no-repeat;
-}
-
-ul li:nth-child(2):before {
-    content: ' ';
-    position: absolute;
-    top: 17px;
-    left: 25px;
-    width: 50px;
-    height: 50px;
-    background: url("./images/email.svg") no-repeat;
-}
-
-ul li:nth-child(3):before {
-    content: ' ';
-    position: absolute;
-    top: 18px;
-    left: 24px;
-    width: 50px;
-    height: 50px;
-    background: url("./images/Notification.svg") no-repeat;
-}
-
-ul li:nth-child(4):before {
-    content: ' ';
-    position: absolute;
-    top: 16px;
-    left: 24px;
-    width: 50px;
-    height: 50px;
-    background: url("./images/team.svg") no-repeat;
 }
 
 .container {
@@ -208,16 +175,20 @@ ul li:nth-child(4):before {
 .card-title{
     color: #3F1030;
     font-weight: 600;
+    margin-left: -10px;
+    margin-top: -17px;
 }
 
 .card-text{
     color: #A97EA0;
     font-size: 13pt;
+    font-weight: 500;
 }
 
 .noodoproep-title{
     color: #4D4F5C;
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 21pt;
 }
 
 .homepage-cardbutton {
@@ -257,3 +228,19 @@ ul li:nth-child(4):before {
     background-color: #e6af08;
     border-color: #e6af08;
 }
+
+.Bezig{
+  border-left: 3px solid #FFC107;
+} 
+
+.Nieuw{
+    border-left: 3px solid #FF6565;
+} 
+
+.card-line{
+    height: 100px;
+    position: absolute;
+    left: 7%;
+    margin-left: -3px;
+    top: 29%;
+  }

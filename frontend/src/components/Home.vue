@@ -7,10 +7,12 @@
         <b-col lg="4" md="6" sm="12" v-for="call in calls" :key="call">
           <router-link v-bind:to="'/call/'+call.id">        
             <b-card tag="article" border-variant="light" class="col-lg-12 col-md-12 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded hvr-grow-shadow">
+              <div class="card-line" :class="[call.status]"></div>
               <h4 class="card-title">{{call.company_name}}</h4>
-              <b-card-text>Nummer: {{call.phone}}</b-card-text>
+              <b-card-text class="pt-4 mt-4 ml-2">Datum:</b-card-text>
+              <b-card-text class="pt-2 ml-2">Nummer: {{call.phone}}</b-card-text>
               <router-link v-bind:to="'/call/'+call.id">
-                <b-button class="float-right homepage-cardbutton mb-2" variant="warning" :class="[call.status.toLowerCase()]">{{call.status}}</b-button>
+                <b-button class="float-right homepage-cardbutton mt-3" variant="warning" :class="[call.status.toLowerCase()]">{{call.status}}</b-button>
               </router-link>
             </b-card>
           </router-link>
