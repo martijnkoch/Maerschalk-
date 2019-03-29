@@ -60,10 +60,10 @@ $app->get('/api/emergency_call/{id}', function(Request $request, Response $respo
 $app->post('/api/emergency_call/add', function(Request $request, Response $response){
     $company_name = $request->getParam('company_name');
     $phone = $request->getParam('phone');
+    $status = $request->getParam('status');
 
-
-    $sql = "INSERT INTO emergency_calls (company_name,phone) VALUES
-    (:company_name,:phone)";
+    $sql = "INSERT INTO emergency_calls (company_name,status,phone) VALUES
+    (:company_name, :status, :phone)";
 
     try{
         // Get DB Object
@@ -74,7 +74,8 @@ $app->post('/api/emergency_call/add', function(Request $request, Response $respo
         $stmt = $db->prepare($sql);
 
         $stmt->bindParam(':company_name', $company_name);
-        $stmt->bindParam(':phone',      $phone);
+        $stmt->bindParam(':status',       $status);
+        $stmt->bindParam(':phone',        $phone);
 
         $stmt->execute();
 
@@ -90,11 +91,13 @@ $app->put('/api/emergency_call/update/{id}', function(Request $request, Response
     $id = $request->getAttribute('id');
     $company_name = $request->getParam('company_name');
     $phone = $request->getParam('phone');
+    $status = $request->getParam('status');
     $body = $request->getParam('body');
 
     $sql = "UPDATE emergency_calls SET
 				company_name	= :company_name,
                 phone		    = :phone,
+                status          = :status,
                 body            = :body
 			WHERE id = $id";
 
@@ -107,6 +110,7 @@ $app->put('/api/emergency_call/update/{id}', function(Request $request, Response
         $stmt = $db->prepare($sql);
 
         $stmt->bindParam(':company_name',   $company_name);
+        $stmt->bindParam(':status',         $status);
         $stmt->bindParam(':phone',          $phone);
         $stmt->bindParam(':body',           $body);
 
