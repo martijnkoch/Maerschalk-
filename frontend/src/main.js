@@ -9,10 +9,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 //Hover css libary 
-import 'hover.css/css/hover-min.css'
-
+require('./assets/hover-min.css')
 //Custom css file
 require('./assets/main.css')
+
 
 Vue.use(BootstrapVue)
 Vue.use(VueResource)
