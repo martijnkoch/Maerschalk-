@@ -8,8 +8,8 @@
         <div class="form-group shadow-textarea">
           <textarea class="form-control call-textarea" rows="5" v-model="call.body"></textarea>
         </div>
-        <b-button class="mr-3" variant="primary" v-on:click="updateCall(call.id)">Update de tekst</b-button>
-        <b-button v-b-modal.modal-center variant="danger" v-b-modal.modal-1>Verwijder de call</b-button>
+        <b-button class="mr-3" variant="primary" v-on:click="updateCall(call.id)">Update</b-button>
+        <b-button v-b-modal.modal-center variant="danger" v-b-modal.modal-1>Verwijder</b-button>
         <!-- Modal Component -->
         <b-modal hide-footer id="modal-center" size="lg" centered title="Wijziging" ref="emergency-modal">
           <p class="my-4">Weet je zeker dat je de call wil deleten?</p>
