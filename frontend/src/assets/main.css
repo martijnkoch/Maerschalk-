@@ -81,7 +81,7 @@ li {
     padding-left: 40px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
-#sidebar ul li:nth-child(4) {
+#sidebar ul li:nth-child(3) {
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -237,4 +237,8 @@ ul li:nth-child(4):before {
 .btn{
     border-radius: 10px;
     padding: 0.575rem 1rem;
+}
+
+.Bezig {
+    background-color: purple;
 }

@@ -10,7 +10,7 @@
               <h4 class="card-title">{{call.company_name}}</h4>
               <b-card-text>Nummer: {{call.phone}}</b-card-text>
               <router-link v-bind:to="'/call/'+call.id">
-                <b-button class="float-right homepage-cardbutton mb-2" variant="warning">Actief</b-button>
+                <b-button class="float-right homepage-cardbutton mb-2" variant="warning"  :class="[call.status]">{{call.status}}</b-button>
               </router-link>
             </b-card>
           </router-link>
@@ -30,6 +30,9 @@ export default {
         calls: []
       }
     },
+    computed: {
+
+    },
     components: {
       'Headercomponent': Headercomponent,
     },
@@ -40,7 +43,7 @@ export default {
           .then(function(response){
             this.calls = response.body;
           });
-      }
+      },
   },
   created: function(){
     this.fetchCalls();
