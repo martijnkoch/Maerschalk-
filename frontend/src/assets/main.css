@@ -153,6 +153,9 @@ ul li:nth-child(1):before {
 .mt-6 {
   margin-top: 5rem !important;
 }
+.mt-9 {
+    margin-top: 0.70rem !important
+}
 
 .mt-7 {
   margin-top: 7rem !important;
@@ -186,7 +189,7 @@ ul li:nth-child(1):before {
 }
 
 .noodoproep-title{
-    color: #4D4F5C;
+    color: #3F1030;
     font-weight: 600;
 }
 
