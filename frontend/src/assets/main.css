@@ -188,7 +188,6 @@ ul li:nth-child(1):before {
 .noodoproep-title{
     color: #4D4F5C;
     font-weight: 600;
-    font-size: 21pt;
 }
 
 .homepage-cardbutton {
@@ -244,3 +243,12 @@ ul li:nth-child(1):before {
     margin-left: -3px;
     top: 29%;
   }
+.bv-example-row h2{
+    font-weight: 700;
+}
+.modal-header .close {
+    visibility: hidden;
+}
+.no-border{
+  border:none;
+}
