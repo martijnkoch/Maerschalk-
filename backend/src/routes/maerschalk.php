@@ -58,19 +58,26 @@ $app->get('/api/emergency_call/{id}', function(Request $request, Response $respo
 
 // Add Emergency Call
 $app->post('/api/emergency_call/add', function(Request $request, Response $response){
-    function toDutch($datum)
+    function toDutch($time)
     {
-        setlocale(LC_ALL, 'nl_NL');
-        $datum = date("l, j F Y");
-        return $datum;
+        $maand_vh_jaar = date("n")-1; 
+        $dedag = date("j"); 
+        $jaar = date("Y");  
+      
+        $maanden = array('Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'); 
+        $maand = $maanden[$maand_vh_jaar]; 
+      
+        $time = "".$dedag." ".$maand." ".$jaar.""; 
+        return $time;
     }
     $company_name = $request->getParam('company_name');
-    $phone = $request->getParam('phone');
-    $status = 'Nieuw';
-    $date = toDutch($request->getParam('date'));
+    $phone        = $request->getParam('phone');
+    $body         = ' ';
+    $status       = 'Nieuw';
+    $date         = toDutch($request->getParam('date'));
 
-    $sql = "INSERT INTO emergency_calls (company_name,status,phone,date) VALUES
-    (:company_name, :status, :phone, :date)";
+    $sql = "INSERT INTO emergency_calls (company_name,body, status,phone,date) VALUES
+    (:company_name, :body, :status, :phone, :date)";
 
     try{
         // Get DB Object
@@ -81,6 +88,7 @@ $app->post('/api/emergency_call/add', function(Request $request, Response $respo
         $stmt = $db->prepare($sql);
 
         $stmt->bindParam(':company_name', $company_name);
+        $stmt->bindParam(':body',         $body);
         $stmt->bindParam(':status',       $status);
         $stmt->bindParam(':phone',        $phone);
         $stmt->bindParam(':date',         $date);
