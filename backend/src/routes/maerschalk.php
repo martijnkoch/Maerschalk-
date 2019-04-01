@@ -58,12 +58,21 @@ $app->get('/api/emergency_call/{id}', function(Request $request, Response $respo
 
 // Add Emergency Call
 $app->post('/api/emergency_call/add', function(Request $request, Response $response){
+    function toDutch($time)
+    {
+        $datum = date("l, j F Y");
+        $tijd = date("H:i:s");
+
+        $time = $datum . $tijd;
+        return $tijd;
+    }
     $company_name = $request->getParam('company_name');
     $phone = $request->getParam('phone');
-    $status = $request->getParam('status');
+    $status = 'Nieuw';
+    $date = toDutch($request->getParam('date'));
 
-    $sql = "INSERT INTO emergency_calls (company_name,status,phone) VALUES
-    (:company_name, :status, :phone)";
+    $sql = "INSERT INTO emergency_calls (company_name,status,phone,date) VALUES
+    (:company_name, :status, :phone, :date)";
 
     try{
         // Get DB Object
@@ -76,6 +85,7 @@ $app->post('/api/emergency_call/add', function(Request $request, Response $respo
         $stmt->bindParam(':company_name', $company_name);
         $stmt->bindParam(':status',       $status);
         $stmt->bindParam(':phone',        $phone);
+        $stmt->bindParam(':date',         $date);
 
         $stmt->execute();
 
@@ -139,135 +149,6 @@ $app->delete('/api/emergency_call/delete/{id}', function(Request $request, Respo
         $stmt->execute();
         $db = null;
         echo '{"notice": {"text": "Emergency Call Deleted"}';
-    } catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-    }
-});
-
-// Get All Employees
-$app->get('/api/employees', function(Request $request, Response $response){
-    $sql = "SELECT * FROM employees";
-
-    try{
-        // Get DB Object
-        $db = new db();
-        // Connect
-        $db = $db->connect();
-
-        $stmt = $db->query($sql);
-        $calls = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $db = null;
-        echo json_encode($calls);
-    } catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-    }
-});
-
-// Get Single Employee 
-$app->get('/api/employee/{id}', function(Request $request, Response $response){
-    $id = $request->getAttribute('id');
-
-    $sql = "SELECT * FROM employees WHERE id = $id";
-
-    try{
-        // Get DB Object
-        $db = new db();
-        // Connect
-        $db = $db->connect();
-
-        $stmt = $db->query($sql);
-        $calls = $stmt->fetch(PDO::FETCH_OBJ);
-        $db = null;
-        echo json_encode($calls);
-    } catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-    }
-});
-
-// Add A New Employee 
-$app->post('/api/employee/add', function(Request $request, Response $response){
-    $company_name = $request->getParam('company_name');
-    $phone = $request->getParam('phone');
-
-
-    $sql = "INSERT INTO employees (first_name, last_name, job, image) VALUES
-    (:first_name,:last_name, :job, :image)";
-
-    try{
-        // Get DB Object
-        $db = new db();
-        // Connect
-        $db = $db->connect();
-
-        $stmt = $db->prepare($sql);
-
-        $stmt->bindParam(':first_name', $first_name);
-        $stmt->bindParam(':last_name',  $last_name);
-        $stmt->bindParam(':job',        $job);
-        $stmt->bindParam(':image',      $image);
-
-
-        $stmt->execute();
-
-        echo '{"notice": {"text": "Employee Call Added"}';
-
-    } catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-    }
-});
-
-// Update Employee 
-$app->put('/api/employee/update/{id}', function(Request $request, Response $response){
-    $id = $request->getAttribute('id');
-    $company_name = $request->getParam('company_name');
-    $phone = $request->getParam('phone');
-    $body = $request->getParam('body');
-
-    $sql = "UPDATE employees SET
-				first_name	    = :first_name,
-                last_name		= :last_name,
-                job             = :job,
-                image           = :image
-			WHERE id = $id";
-
-    try{
-        // Get DB Object
-        $db = new db();
-        // Connect
-        $db = $db->connect();
-
-        $stmt = $db->prepare($sql);
-
-        $stmt->bindParam(':first_name', $first_name);
-        $stmt->bindParam(':last_name',  $last_name);
-        $stmt->bindParam(':job',        $job);
-        $stmt->bindParam(':image',      $image);
-
-        $stmt->execute();
-
-        echo '{"notice": {"text": "Employee Updated"}';
-
-    } catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-    }
-});
-
-// Delete employee Call
-$app->delete('/api/employee/delete/{id}', function(Request $request, Response $response){
-    $id = $request->getAttribute('id');
-
-    $sql = "DELETE FROM employees WHERE id = $id";
-
-    try{
-        // Get DB Object
-        $db = new db();
-        // Connect
-        $db = $db->connect();
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $db = null;
-        echo '{"notice": {"text": "Employee Deleted"}';
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
     }
