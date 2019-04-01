@@ -58,13 +58,11 @@ $app->get('/api/emergency_call/{id}', function(Request $request, Response $respo
 
 // Add Emergency Call
 $app->post('/api/emergency_call/add', function(Request $request, Response $response){
-    function toDutch($time)
+    function toDutch($datum)
     {
+        setlocale(LC_ALL, 'nl_NL');
         $datum = date("l, j F Y");
-        $tijd = date("H:i:s");
-
-        $time = $datum . $tijd;
-        return $tijd;
+        return $datum;
     }
     $company_name = $request->getParam('company_name');
     $phone = $request->getParam('phone');
