@@ -1,4 +1,5 @@
 # SlimApp RESTful API
+![alt text](https://discourse-cdn-sjc2.com/standard14/uploads/slimframework/original/1X/704c3a9a7ce53ea7d06952ff4a33cf945e68ac4e.png)
 
 This is a RESTful api built with the SlimPHP framework and uses MySQL for storage.
 
@@ -14,7 +15,7 @@ Edit db/config params
 Install SlimPHP and dependencies
 
 ```sh
-$ composer update
+$ composer install
 ```
 ### API Endpints
 ```sh
