@@ -53,6 +53,10 @@ export default {
   },
   created: function(){
     this.fetchCalls();
+
+    setInterval(function () {
+      this.fetchCalls();
+    }.bind(this), 10000);
   },
 }
 </script>
