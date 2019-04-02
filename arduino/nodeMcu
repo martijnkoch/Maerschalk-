@@ -16,7 +16,7 @@ const int httpsPort = 443;
 
 // Use web browser to view and copy
 // SHA1 fingerprint of the certificate
-const char fingerprint[] PROGMEM = "97:DF:14:A4:29:F6:8E:8C:6C:16:83:6C:A3:7D:52:2B:E0:E2:71:43";
+const char* fingerprint = "97:DF:14:A4:29:F6:8E:8C:6C:16:83:6C:A3:7D:52:2B:E0:E2:71:43";
 
 WiFiClientSecure client;
 
@@ -48,6 +48,13 @@ void setup() {
     Serial.println("connection failed");
     return;
   }
+  Serial.println("connected to host");
+
+  if (client.verify(fingerprint, host)) {
+    Serial.println("certificate matches");
+  } else {
+    Serial.println("certificate doesn't match");
+  }
 
   String url = "/emergency_call/add";
   Serial.print("requesting URL: ");
@@ -57,7 +64,7 @@ void setup() {
   {
     String PostData = "{";
     PostData += "\"company_name\": \"VIEZEVREDDIEALSOFJEDATNIET\",";
-    PostData += "\"phone\": \"06123456789\"}";
+    PostData += "\"phone\": \"13371331337\"}";
 
     client.print(String("POST ") + url + " HTTP/1.1\r\n" +
                  "Host: " + host + "\r\n" +
