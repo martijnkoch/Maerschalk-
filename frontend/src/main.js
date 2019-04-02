@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router/'
 import VueResource from 'vue-resource'
+import lodash from 'lodash'
 
 //Bootstrap files 
 import BootstrapVue from 'bootstrap-vue'
@@ -13,9 +14,9 @@ require('./assets/hover-min.css')
 //Custom css file
 require('./assets/main.css')
 
-
 Vue.use(BootstrapVue)
 Vue.use(VueResource)
+Vue.use(lodash)
 Vue.config.productionTip = false
 
 new Vue({
