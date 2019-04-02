@@ -56,15 +56,15 @@ void setup() {
     Serial.println("certificate doesn't match");
   }
 
-  String url = "/emergency_call/add";
+  String url = "/api/emergency_call/add";
   Serial.print("requesting URL: ");
   Serial.println(url);
 
   if (client.connect(host, 443))
   {
     String PostData = "{";
-    PostData += "\"company_name\": \"VIEZEVREDDIEALSOFJEDATNIET\",";
-    PostData += "\"phone\": \"13371331337\"}";
+    PostData += "\"company_name\": \"TERINGSMERIGEVIEZEADDKNOP\",";
+    PostData += "\"phone\": \"123908231489172342108937\"}";
 
     client.print(String("POST ") + url + " HTTP/1.1\r\n" +
                  "Host: " + host + "\r\n" +
