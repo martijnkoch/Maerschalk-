@@ -1,4 +1,3 @@
-
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include <ArduinoJson.h>
@@ -7,6 +6,10 @@
 #define STASSID "SSID"
 #define STAPSK  "WW"
 #endif
+
+int ledPin = 13;
+int buttonPin = 16;
+int temp = 0;
 
 const char* ssid = STASSID;
 const char* password = STAPSK;
@@ -21,6 +24,11 @@ const char* fingerprint = "97:DF:14:A4:29:F6:8E:8C:6C:16:83:6C:A3:7D:52:2B:E0:E2
 WiFiClientSecure client;
 
 void setup() {
+  pinMode(ledPin,OUTPUT);
+  digitalWrite(ledPin,LOW);
+  pinMode(buttonPin, INPUT);
+  
+  
   Serial.begin(115200);
   Serial.println();
   Serial.print("connecting to ");
@@ -33,9 +41,21 @@ void setup() {
   }
   Serial.println("");
   Serial.println("WiFi connected");
+  digitalWrite( ledPin , HIGH);
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 
+}
+
+void loop() {
+  
+  while (digitalRead(buttonPin) == HIGH) {
+    sendJson();
+  }
+
+}
+
+void sendJson(){
   // Use WiFiClientSecure class to create TLS connection
   WiFiClientSecure client;
   Serial.print("connecting to ");
@@ -60,11 +80,9 @@ void setup() {
   Serial.print("requesting URL: ");
   Serial.println(url);
 
-  if (client.connect(host, 443))
-  {
     String PostData = "{";
-    PostData += "\"company_name\": \"TERINGSMERIGEVIEZEADDKNOP\",";
-    PostData += "\"phone\": \"123908231489172342108937\"}";
+    PostData += "\"company_name\": \"DEZEISMETEENKNOPVERSTUURLEUKHESCHATJES\",";
+    PostData += "\"phone\": \"0492beterdan040he\"}";
 
     client.print(String("POST ") + url + " HTTP/1.1\r\n" +
                  "Host: " + host + "\r\n" +
@@ -72,12 +90,6 @@ void setup() {
                  "Content-Length: " + PostData.length() + "\r\n" +
                  "\r\n" + // This is the extra CR+LF pair to signify the start of a body
                  PostData + "\n");
-    Serial.println("json injected:" + PostData);             
-  }
-  else Serial.println("Client not connected!");
-}
-
-
-void loop() {
-
+    Serial.println("json injected:" + PostData);  
+    delay(100);         
 }
